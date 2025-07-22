@@ -5,44 +5,43 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 interface DealerLogoProps {
-  width?: number;
-  height?: number;
-  className?: string;
+    width?: number;
+    height?: number;
+    className?: string;
 }
 
 export function DealerLogo({
-  width = 200,
-  height = 60,
-  className = "",
+    width = 200,
+    height = 60,
+    className = "",
 }: DealerLogoProps) {
-  const { resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+    const { resolvedTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+    useEffect(() => {
+        setMounted(true);
+    }, []);
 
-  if (!mounted) {
+    if (!mounted) {
+        return (
+            <div
+                className={`bg-gray-200 animate-pulse ${className}`}
+                style={{ width, height }}
+            />
+        );
+    }
+
+    const isDark = resolvedTheme === "dark";
+
     return (
-      <div
-        className={`bg-gray-200 animate-pulse ${className}`}
-        style={{ width, height }}
-      />
+        <Image
+            src="/Logo-Dealerspace.svg"
+            alt="DealerSpace"
+            width={width}
+            height={height}
+            className={`${className} ${isDark ? "filter invert brightness-0 contrast-100" : ""
+                }`}
+            priority
+        />
     );
-  }
-
-  const isDark = resolvedTheme === "dark";
-
-  return (
-    <Image
-      src="/Logo-Dealerspace.svg"
-      alt="DealerSpace"
-      width={width}
-      height={height}
-      className={`${className} ${
-        isDark ? "filter invert brightness-0 contrast-100" : ""
-      }`}
-      priority
-    />
-  );
 }
