@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle } from "lucide-react";
-
+const api_url = "https://api.itfolkstech.com"; // Ajuste a URL da API conforme necessário
 // Aqui fica a lógica do formulário
 function ResetPasswordConfirmPage() {
     const router = useRouter();
@@ -35,7 +35,7 @@ function ResetPasswordConfirmPage() {
         setIsLoading(true);
         try {
             // AJUSTE AQUI para usar a URL do Strapi
-            const res = await fetch("https://api.itfolkstech.com/api/auth/reset-password", {
+            const res = await fetch(`${api_url}/api/auth/reset-password`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ code, password, passwordConfirmation: passwordConfirm }),
