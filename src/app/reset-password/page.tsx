@@ -16,7 +16,7 @@ import {
 import { DealerLogo } from "../../components/DealerLogo";
 import { ModeToggle } from "@/components/ThemeToggle";
 import { Mail, ArrowLeft, CheckCircle, Send, Lock } from "lucide-react";
-
+const api_url = "https://api.itfolkstech.com";
 // Componente separado para ser usado no Suspense
 function ResetPasswordPageInner() {
     const searchParams = useSearchParams();
@@ -39,7 +39,7 @@ function ResetPasswordPageInner() {
         setIsLoading(true);
 
         try {
-            const res = await fetch("https://api.itfolkstech.com/api/auth/forgot-password", {
+            const res = await fetch(`${api_url}/api/auth/forgot-password`", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email }),
