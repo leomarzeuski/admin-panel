@@ -39,7 +39,7 @@ function ResetPasswordPageInner() {
         setIsLoading(true);
 
         try {
-            const res = await fetch("https://admin-panel-plum-seven-31.vercel.app/api/auth/forgot-password", {
+            const res = await fetch("https://api.itfolkstech.com/api/auth/forgot-password", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email }),
@@ -72,7 +72,7 @@ function ResetPasswordPageInner() {
 
         setIsLoading(true);
         try {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/auth/reset-password`, {
+            const res = await fetch("https://api.itfolkstech.com/api/auth/reset-password", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({

@@ -35,7 +35,7 @@ function ResetPasswordConfirmPage() {
         setIsLoading(true);
         try {
             // AJUSTE AQUI para usar a URL do Strapi
-            const res = await fetch("https://admin-panel-plum-seven-31.vercel.app/api/auth/reset-password", {
+            const res = await fetch("https://api.itfolkstech.com/api/auth/reset-password", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ code, password, passwordConfirmation: passwordConfirm }),
