@@ -1,3 +1,4 @@
+//C:\admin-panel\src\app\reset-password\page.tsx
 "use client";
 
 import { useState, Suspense } from "react";
@@ -74,7 +75,7 @@ function ResetPasswordPageInner() {
 
     setIsLoading(true);
     try {
-      const res = await fetch(`${api_url}/api/auth/forgot-password`, {
+      const res = await fetch(`${api_url}/api/auth/reset-password`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
