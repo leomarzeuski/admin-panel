@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle } from "lucide-react";
-const api_url = "https://api.itfolkstech.com"; // Ajuste a URL da API conforme necessário
+const api_url = process.env.NEXT_PUBLIC_API_URL || "https://api.itfolkstech.com"; // Ajuste a URL da API conforme necessário
 // Aqui fica a lógica do formulário
 function ResetPasswordConfirmPage() {
     const router = useRouter();
