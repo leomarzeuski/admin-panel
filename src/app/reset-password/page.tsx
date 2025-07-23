@@ -16,8 +16,7 @@ import {
 import { DealerLogo } from "../../components/DealerLogo";
 import { ModeToggle } from "@/components/ThemeToggle";
 import { Mail, ArrowLeft, CheckCircle, Send, Lock } from "lucide-react";
-const api_url =
-  process.env.NEXT_PUBLIC_API_URL || "https://api.itfolkstech.com"; // Ajuste a URL da API conforme necessário
+const api_url = process.env.NEXT_PUBLIC_STRAPI_URL || "https://api.itfolkstech.com";
 // Componente separado para ser usado no Suspense
 function ResetPasswordPageInner() {
   const searchParams = useSearchParams();
