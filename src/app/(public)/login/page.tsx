@@ -28,7 +28,7 @@ function LoginForm() {
         setError(null);
 
         try {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_URL}/api/auth/local`, {
+            const res = await fetch("https://api.itfolkstech.com/api/auth/local", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
