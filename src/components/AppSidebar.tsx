@@ -63,7 +63,7 @@ type UserData = {
 
 const navigationItems = [
   {
-    title: "Agente ITFolks",
+    title: "Agente DealerSpace",
     url: "/agente",
     icon: Search,
     tooltip: "Configure e execute buscas personalizadas",
